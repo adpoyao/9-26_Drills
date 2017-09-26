@@ -20,10 +20,12 @@
 // // Return only names that begin with 'R'
 // const myNames = ['Rich', 'Joe', 'Bhaumik', 'Ray'];
 
-// const filteredNames = filter(myNames, function(name) {
-//   // This is a "predicate function" - it's a function that only returns a boolean
-//   return name[0] === 'R';
-// });
+// // const filteredNames = filter(myNames, function(name) {
+// //   // This is a "predicate function" - it's a function that only returns a boolean
+// //   return name[0] === 'R';
+// // });
+
+// const filteredNames = filter(myNames, (name) => {name[0] === 'R';});
 
 // console.log(filteredNames); // => ['Rich', 'Ray']
 
@@ -77,7 +79,7 @@
 
 let turtleMovement = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
 
-let noNegativeSteps = turtleMovement.filter(function(move){
+let noNegativeSteps = turtleMovement.filter((move) => {
   let forwardPane = move[0];
   let sidePane = move[1];
   return forwardPane >= 0 && sidePane >= 0;
@@ -94,5 +96,5 @@ console.log(totalSteps);
 turtleMovement.forEach(function(move){
   let forwardPane = move[0];
   let sidePane = move[1];
-  console.log(Math.abs(forwardPane) + Math.abs(sidePane));
+  console.log(Math.abs(forwardPane) + Math.abs(sidePane), 'for each result');
 });
