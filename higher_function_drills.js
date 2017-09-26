@@ -67,3 +67,32 @@
 // sharksWarning('Crescent bays of Channel Islands');
 // pigsWarning('Ol\' McDonald\'s Farm');
 // pigsWarning('my Sister\'s barn wedding');
+
+/**
+ *Turtle's Movement: [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]]
+ *.filter to remove negative (steps)
+ *.map to create new array, adding total forward and left steps.
+ *.forEach to log out how many steps took in each case
+ */
+
+let turtleMovement = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+
+let noNegativeSteps = turtleMovement.filter(function(move){
+  let forwardPane = move[0];
+  let sidePane = move[1];
+  return forwardPane >= 0 && sidePane >= 0;
+});
+console.log(noNegativeSteps);
+
+let totalSteps = turtleMovement.map(function(move){
+  let forwardPane = move[0];
+  let sidePane = move[1];
+  return Math.abs(forwardPane) + Math.abs(sidePane);
+});
+console.log(totalSteps);
+
+turtleMovement.forEach(function(move){
+  let forwardPane = move[0];
+  let sidePane = move[1];
+  console.log(Math.abs(forwardPane) + Math.abs(sidePane));
+});
