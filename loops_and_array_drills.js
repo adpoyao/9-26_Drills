@@ -78,11 +78,15 @@ function average(numbers) {
   // GOAL: Takes numbers (array) and return average - using WHILE
   // Run through array > add each number to sum >> divide by length of array
   // Try Array.forEach() method as BONUS
-  let sum = 0, i =0;
-  while(i < numbers.length) {
-    sum += numbers[i];
-    i++;
-  }
+//   let sum = 0, i =0;
+//   while(i < numbers.length) {
+//     sum += numbers[i];
+//     i++;
+//   }
+//   return sum/numbers.length;
+  let sum = 0;
+  numbers.forEach((a) =>
+    sum += a);
   return sum/numbers.length;
 }
   
